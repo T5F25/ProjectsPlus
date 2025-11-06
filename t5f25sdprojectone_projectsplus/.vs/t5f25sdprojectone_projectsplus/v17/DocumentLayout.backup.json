@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|e:\\col - sem - a\\courses - a\\semester c - 5\\courses - c\\comp 231 - software development project i\\t5t25\u002B\\projectsplus\\projectsplus\\t5f25sdprojectone_projectsplus\\github\\githubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|solutionrelative:github\\githubrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|e:\\col - sem - a\\courses - a\\semester c - 5\\courses - c\\comp 231 - software development project i\\t5t25\u002B\\projectsplus\\projectsplus\\t5f25sdprojectone_projectsplus\\github\\githubmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|solutionrelative:github\\githubmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|e:\\col - sem - a\\courses - a\\semester c - 5\\courses - c\\comp 231 - software development project i\\t5t25\u002B\\projectsplus\\projectsplus\\t5f25sdprojectone_projectsplus\\models\\comunication\\chatroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9383F716-6147-4124-A1B9-4005D31F12E1}|t5f25sdprojectone_projectsplus.csproj|solutionrelative:models\\comunication\\chatroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -75,19 +83,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GitHubRepository.cs",
+              "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Github\\GitHubRepository.cs",
+              "RelativeDocumentMoniker": "Github\\GitHubRepository.cs",
+              "ToolTip": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Github\\GitHubRepository.cs",
+              "RelativeToolTip": "Github\\GitHubRepository.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAADYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T20:43:05.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GitHubManager.cs",
+              "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Github\\GitHubManager.cs",
+              "RelativeDocumentMoniker": "Github\\GitHubManager.cs",
+              "ToolTip": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Github\\GitHubManager.cs",
+              "RelativeToolTip": "Github\\GitHubManager.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T20:42:12.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ChatRoom.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Comunication\\ChatRoom.cs",
               "RelativeDocumentMoniker": "Models\\Comunication\\ChatRoom.cs",
               "ToolTip": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Comunication\\ChatRoom.cs",
               "RelativeToolTip": "Models\\Comunication\\ChatRoom.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwDoAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T18:05:14.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Project.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Project.cs",
               "RelativeDocumentMoniker": "Models\\Project.cs",
@@ -95,12 +129,11 @@
               "RelativeToolTip": "Models\\Project.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:49:24.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:49:24.248Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SeedData.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "Data\\SeedData.cs",
@@ -108,12 +141,11 @@
               "RelativeToolTip": "Data\\SeedData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:48:56.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:48:56.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ProjectsPlusDbContext.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Data\\ProjectsPlusDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ProjectsPlusDbContext.cs",
@@ -121,12 +153,11 @@
               "RelativeToolTip": "Data\\ProjectsPlusDbContext.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAA3wCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:46:42.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:46:42.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "FileReference.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\FileReference.cs",
               "RelativeDocumentMoniker": "Models\\FileReference.cs",
@@ -134,12 +165,11 @@
               "RelativeToolTip": "Models\\FileReference.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:44:10.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:44:10.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Grant.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Grant.cs",
               "RelativeDocumentMoniker": "Models\\Grant.cs",
@@ -147,12 +177,11 @@
               "RelativeToolTip": "Models\\Grant.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:43:09.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:43:09.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ChatMessage.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Comunication\\ChatMessage.cs",
               "RelativeDocumentMoniker": "Models\\Comunication\\ChatMessage.cs",
@@ -160,12 +189,11 @@
               "RelativeToolTip": "Models\\Comunication\\ChatMessage.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAQwGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:23:07.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:23:07.195Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UserRole.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "Models\\UserRole.cs",
@@ -173,12 +201,11 @@
               "RelativeToolTip": "Models\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:41:58.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:41:58.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "RolePermission.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\RolePermission.cs",
               "RelativeDocumentMoniker": "Models\\RolePermission.cs",
@@ -186,12 +213,11 @@
               "RelativeToolTip": "Models\\RolePermission.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:40:53.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:40:53.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Permission.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Permission.cs",
               "RelativeDocumentMoniker": "Models\\Permission.cs",
@@ -199,12 +225,11 @@
               "RelativeToolTip": "Models\\Permission.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:27:40.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:27:40.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Role.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Models\\Role.cs",
@@ -212,12 +237,11 @@
               "RelativeToolTip": "Models\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:25:30.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:25:30.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "E:\\COL - SEM - A\\Courses - A\\Semester C - 5\\Courses - C\\COMP 231 - Software Development Project I\\T5T25\u002B\\ProjectsPlus\\ProjectsPlus\\t5f25sdprojectone_projectsplus\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "Models\\AuditLog.cs",
@@ -225,8 +249,7 @@
               "RelativeToolTip": "Models\\AuditLog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:24:14.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:24:14.319Z"
             }
           ]
         },
