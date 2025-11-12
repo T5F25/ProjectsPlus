@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\DTO\" />
+    <Folder Include="Chat\" />
     <Folder Include="Services\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
