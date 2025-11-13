@@ -68,7 +68,8 @@ namespace t5f25sdprojectone_projectsplus.Models.SystemTypeID
 
                 // System/admin artifacts
                 new SystemType { Id = 110, Code = "system:notification", DisplayName = "System Notification", IsActive = true, CreatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), UpdatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), Version = 1 },
-                new SystemType { Id = 111, Code = "system:audit", DisplayName = "System Audit Log", IsActive = true, CreatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), UpdatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), Version = 1 }
+                new SystemType { Id = 111, Code = "system:audit", DisplayName = "System Audit Log", IsActive = true, CreatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), UpdatedAt = new DateTimeOffset(2025, 11, 13, 00, 00, 00, TimeSpan.Zero), Version = 1 }         
+
             );
 
 

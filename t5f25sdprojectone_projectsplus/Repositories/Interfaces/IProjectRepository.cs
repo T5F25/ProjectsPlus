@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using t5f25sdprojectone_projectsplus.Models.Project;
 
-namespace t5f25sdprojectone_projectsplus.Repositories
+namespace t5f25sdprojectone_projectsplus.Repositories.Interfaces
 {
     /// <summary>
     /// Repository contract for Project persistence and queries.

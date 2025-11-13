@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using t5f25sdprojectone_projectsplus.Models.Identity;
 
-namespace ProjectsPlus.Repositories
+namespace t5f25sdprojectone_projectsplus.Repositories.Interfaces
 {
     /// <summary>
     /// Minimal repository contract for GitHubUserLink persistence and lookup.

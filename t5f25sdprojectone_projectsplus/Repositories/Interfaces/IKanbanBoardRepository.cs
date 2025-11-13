@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using t5f25sdprojectone_projectsplus.Models.Workspace.KanbanBoard;
 
-namespace t5f25sdprojectone_projectsplus.Repositories
+namespace t5f25sdprojectone_projectsplus.Repositories.Interfaces
 {
     public interface IKanbanBoardRepository
     {

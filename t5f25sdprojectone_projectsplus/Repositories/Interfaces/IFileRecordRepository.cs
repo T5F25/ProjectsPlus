@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using t5f25sdprojectone_projectsplus.Models.Storage;
 
-namespace t5f25sdprojectone_projectsplus.Repositories
+namespace t5f25sdprojectone_projectsplus.Repositories.Interfaces
 {
     public interface IFileRecordRepository
     {
