@@ -179,4 +179,80 @@ TestResults/
 
 # Ignore publish output
 publish/
+#-------------------------------------------------------
+
+# Visual Studio cache and temp files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# MSTest and test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ASP.NET and Razor artifacts
+*.dbmdl
+*.log
+*.tlog
+*.cache
+*.pdb
+*.pidb
+*.svclog
+*.scc
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+*.csproj.FileListAbsolute.txt
+*.csproj.AssemblyReference.cache
+*.csproj.CoreCompileInputs.cache
+*.csproj.GeneratedMSBuildEditorConfig.editorconfig
+
+# Static web assets
+staticwebassets/
+*.staticwebassets.*
+
+# Scoped CSS
+scopedcss/
+*.bundle.scp.css
+*.rz.scp.css
+
+# Entity Framework
+Migrations/
+
+# IDE-specific folders
+.idea/
+*.DotSettings.user
+
+# GitHub Copilot indices (optional)
+.vs/**/CopilotIndices/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Others
+*.tmp
+*.bak
+*.swp
+*.sln.ide
+
 
