@@ -1,79 +1,152 @@
 ﻿// Configurations/Identity/UserEntityTypeConfiguration.cs
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using t5f25sdprojectone_projectsplus.Models.SystemTypeID;
-
 
 namespace t5f25sdprojectone_projectsplus.Models.Identity
 {
     /// <summary>
-    /// EF Core configuration for User entity.
-    /// - Maps to canonical "users" table with explicit column names and indexes.
-    /// - Declares unique index on email and concurrency token mapping for Version.
-    /// - Does not cascade-delete any navigation; keep ownership explicit in services.
+    /// EF Core mapping for the users table.
+    /// - Table name: users
+    /// - Columns use snake_case explicitly
+    /// - Unique indexes: ux_users_normalized_email, ux_users_normalized_username
+    /// - Non-unique indexes: ix_users_signup_status, ix_users_system_type_id, ix_users_github_id
+    /// - Concurrency token: version (int) enforced via [ConcurrencyCheck] on the POCO
+    /// - FK to system_types is intentionally deferred to Migration C (see migrations/backfill plan).
     /// </summary>
-    public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
+    public sealed class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<User> b)
         {
-            builder.ToTable("users");
+            b.ToTable("users");
 
-            builder.HasKey(u => u.Id);
-            builder.Property(u => u.Id)
-                   .HasColumnName("id")
-                   .ValueGeneratedOnAdd();
+            b.HasKey(x => x.Id)
+             .HasName("pk_users");
 
-            builder.Property(f => f.SystemTypeId).HasColumnName("system_type_id").IsRequired();
-            builder.HasOne<SystemType>()
-                   .WithMany()
-                   .HasForeignKey(nameof(User.SystemTypeId))
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("fk_user_system_type_id_system_types");
+            b.Property(x => x.Id)
+             .HasColumnName("id");
 
-            builder.Property(u => u.Email)
-                   .HasColumnName("email")
-                   .HasMaxLength(320)
-                   .IsRequired();
+            b.Property(x => x.SystemTypeId)
+             .HasColumnName("system_type_id");
 
-            builder.Property(u => u.DisplayName)
-                   .HasColumnName("display_name")
-                   .HasMaxLength(200)
-                   .IsRequired(false);
+            b.Property(x => x.Username)
+             .HasColumnName("username")
+             .HasMaxLength(200)
+             .IsRequired();
 
-            builder.Property(u => u.Verified)
-                   .HasColumnName("verified")
-                   .IsRequired()
-                   .HasDefaultValue(false);
+            b.Property(x => x.NormalizedUsername)
+             .HasColumnName("normalized_username")
+             .HasMaxLength(200)
+             .IsRequired();
 
-            builder.Property(u => u.GithubId)
-                   .HasColumnName("github_id")
-                   .IsRequired(false);
+            b.Property(x => x.Email)
+             .HasColumnName("email")
+             .HasMaxLength(320)
+             .IsRequired();
 
-            builder.Property(u => u.ProfileJson)
-                   .HasColumnName("profile_json")
-                   .HasMaxLength(4000)
-                   .IsRequired(false);
+            b.Property(x => x.NormalizedEmail)
+             .HasColumnName("normalized_email")
+             .HasMaxLength(320)
+             .IsRequired();
 
-            builder.Property(u => u.CreatedAt)
-                   .HasColumnName("created_at")
-                   .IsRequired();
+            b.Property(x => x.PasswordHash)
+             .HasColumnName("password_hash")
+             .HasMaxLength(1000);
 
-            builder.Property(u => u.UpdatedAt)
-                   .HasColumnName("updated_at")
-                   .IsRequired();
+            b.Property(x => x.PasswordSalt)
+             .HasColumnName("password_salt")
+             .HasMaxLength(500);
 
-            builder.Property(u => u.Version)
-                   .HasColumnName("version")
-                   .IsRequired()
-                   .IsConcurrencyToken();
+            b.Property(x => x.EmailVerifiedAt)
+             .HasColumnName("email_verified_at");
 
-            builder.HasIndex(u => u.Email)
-                   .IsUnique()
-                   .HasDatabaseName("ix_users_email");
+            b.Property(x => x.LastLoginAt)
+             .HasColumnName("last_login_at");
 
-            builder.HasIndex(u => u.GithubId)
-                   .HasDatabaseName("ix_users_github_id");           
+            b.Property(x => x.IsActive)
+             .HasColumnName("is_active")
+             .IsRequired();
 
+            b.Property(x => x.DisplayName)
+             .HasColumnName("display_name")
+             .HasMaxLength(200)
+             .IsRequired(false);
+
+            b.Property(x => x.Verified)
+             .HasColumnName("verified")
+             .IsRequired()
+             .HasDefaultValue(false);
+
+            b.Property(x => x.GithubId)
+             .HasColumnName("github_id")
+             .IsRequired(false);
+
+            b.Property(x => x.SignupRoute)
+             .HasColumnName("signup_route")
+             .IsRequired();
+
+            b.Property(x => x.SignupStatus)
+             .HasColumnName("signup_status")
+             .IsRequired();
+
+            b.Property(x => x.JoiningPurpose)
+             .HasColumnName("joining_purpose")
+             .HasMaxLength(4000);
+
+            b.Property(x => x.SupportingDocumentsPath)
+             .HasColumnName("supporting_documents_path")
+             .HasMaxLength(2000);
+
+            b.Property(x => x.IsAdminSeeded)
+             .HasColumnName("is_admin_seeded")
+             .IsRequired();
+
+            b.Property(x => x.DefaultPasswordIssuedAt)
+             .HasColumnName("default_password_issued_at");
+
+            b.Property(x => x.ProfileJson)
+             .HasColumnName("profile_json")
+             .HasMaxLength(4000);
+
+            b.Property(x => x.CreatedBy)
+             .HasColumnName("created_by");
+
+            b.Property(x => x.CreatedAt)
+             .HasColumnName("created_at")
+             .IsRequired();
+
+            b.Property(x => x.UpdatedAt)
+             .HasColumnName("updated_at")
+             .IsRequired();
+
+            b.Property(x => x.Version)
+             .HasColumnName("version")
+             .IsRequired();
+
+            // Indexes
+            b.HasIndex(x => x.NormalizedEmail)
+             .IsUnique()
+             .HasDatabaseName("ux_users_normalized_email");
+
+            b.HasIndex(x => x.NormalizedUsername)
+             .IsUnique()
+             .HasDatabaseName("ux_users_normalized_username");
+
+            b.HasIndex(x => x.SignupStatus)
+             .HasDatabaseName("ix_users_signup_status");
+
+            b.HasIndex(x => x.SystemTypeId)
+             .HasDatabaseName("ix_users_system_type_id");
+
+            b.HasIndex(x => x.GithubId)
+             .HasDatabaseName("ix_users_github_id");
+
+            // NOTE: FK to system_types is deferred to Migration C after backfill.
+            // To enable FK in mapping after Migration C, uncomment and use the explicit constraint name:
+            //
+            // b.HasOne<SystemType>()
+            //  .WithMany()
+            //  .HasForeignKey(nameof(User.SystemTypeId))
+            //  .HasConstraintName("fk_users_system_type_id_system_types");
         }
     }
 }

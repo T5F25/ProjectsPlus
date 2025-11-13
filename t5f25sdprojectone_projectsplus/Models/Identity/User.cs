@@ -2,39 +2,71 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 
 namespace t5f25sdprojectone_projectsplus.Models.Identity
 {
     /// <summary>
-    /// Canonical local user account.
+    /// Canonical User POCO for Identity domain.
     /// - Numeric long Id PK.
-    /// - Email is required and globally unique.
-    /// - DisplayName is optional for UI.
-    /// - GithubId is optional numeric provider id (kept for quick joins).
-    /// - ProfileJson is small JSON blob for UI/display preferences; avoid storing provider full payloads here.
-    /// - CreatedAt/UpdatedAt maintained by repository logic (UtcNow).
-    /// - Version used for optimistic concurrency and cache invalidation.
-    /// - Deterministic ToString used for logs and audits:
-    ///   "User:{Id}:E:{Email}:v{Version}"
+    /// - SystemTypeId kept as numeric; nullable during staged rollout.
+    /// - NormalizedUsername/NormalizedEmail for server-side uniqueness and lookups.
+    /// - PasswordHash and PasswordSalt are nullable to allow external/federated accounts.
+    /// - SignupRoute and SignupStatus capture signup variant and lifecycle.
+    /// - JoiningPurpose and SupportingDocumentsPath capture External signup metadata (metadata only).
+    /// - DefaultPasswordIssuedAt marks when a one-time/default password was emailed.
+    /// - Version used for optimistic concurrency; UpdatedAt maintained by repository logic.
+    /// - ToString omits secrets and payloads for safe logging.
     /// </summary>
     [Table("users")]
-    public class User
+    public sealed class User
     {
         [Key]
         [Column("id")]
         public long Id { get; set; }
 
-        // inside FileRecord POCO
-        [Required]
         [Column("system_type_id")]
-        public long SystemTypeId { get; set; }
+        public long? SystemTypeId { get; set; }
 
+        [Required]
+        [MaxLength(200)]
+        [Column("username")]
+        public string Username { get; set; } = null!;
+
+        [Required]
+        [MaxLength(200)]
+        [Column("normalized_username")]
+        public string NormalizedUsername { get; set; } = null!;
 
         [Required]
         [MaxLength(320)]
         [Column("email")]
         public string Email { get; set; } = null!;
 
+        [Required]
+        [MaxLength(320)]
+        [Column("normalized_email")]
+        public string NormalizedEmail { get; set; } = null!;
+
+        [MaxLength(1000)]
+        [Column("password_hash")]
+        public string? PasswordHash { get; set; }
+
+        [MaxLength(500)]
+        [Column("password_salt")]
+        public string? PasswordSalt { get; set; }
+
+        [Column("email_verified_at")]
+        public DateTimeOffset? EmailVerifiedAt { get; set; }
+
+        [Column("last_login_at")]
+        public DateTimeOffset? LastLoginAt { get; set; }
+
+        [Required]
+        [Column("is_active")]
+        public bool IsActive { get; set; } = true;
+
+        // Additional fields surfaced per your request / snippet
         [MaxLength(200)]
         [Column("display_name")]
         public string? DisplayName { get; set; }
@@ -46,9 +78,34 @@ namespace t5f25sdprojectone_projectsplus.Models.Identity
         [Column("github_id")]
         public long? GithubId { get; set; }
 
+        [Required]
+        [Column("signup_route")]
+        public SignupRoute SignupRoute { get; set; } = SignupRoute.SelfService;
+
+        [Required]
+        [Column("signup_status")]
+        public SignupStatus SignupStatus { get; set; } = SignupStatus.Active;
+
+        [MaxLength(4000)]
+        [Column("joining_purpose")]
+        public string? JoiningPurpose { get; set; }
+
+        [MaxLength(2000)]
+        [Column("supporting_documents_path")]
+        public string? SupportingDocumentsPath { get; set; }
+
+        [Column("is_admin_seeded")]
+        public bool IsAdminSeeded { get; set; } = false;
+
+        [Column("default_password_issued_at")]
+        public DateTimeOffset? DefaultPasswordIssuedAt { get; set; }
+
         [MaxLength(4000)]
         [Column("profile_json")]
         public string? ProfileJson { get; set; }
+
+        [Column("created_by")]
+        public long? CreatedBy { get; set; }
 
         [Required]
         [Column("created_at")]
@@ -59,17 +116,26 @@ namespace t5f25sdprojectone_projectsplus.Models.Identity
         public DateTimeOffset UpdatedAt { get; set; } = DateTimeOffset.UtcNow;
 
         [Required]
-        [Column("version")]
         [ConcurrencyCheck]
+        [Column("version")]
         public int Version { get; set; } = 1;
 
-        /// <summary>
-        /// Deterministic ToString for logs/audits.
-        /// Format: "User:{Id}:E:{Email}:v{Version}"
-        /// </summary>
+        // Convenience helpers (not mapped)
+        [NotMapped]
+        public bool NeedsApproval => SignupRoute == SignupRoute.External && SignupStatus == SignupStatus.PendingApproval;
+
+        [NotMapped]
+        public bool MustChangePassword => DefaultPasswordIssuedAt != null && (string.IsNullOrWhiteSpace(PasswordHash));
+
         public override string ToString()
         {
-            return $"User:{Id}:E:{Email}:v{Version}";
+            return $"User:{Id}:SysType={(SystemTypeId?.ToString() ?? "n/a")}:U={NormalizedUsername}:E={NormalizedEmail}:Route={SignupRoute}:Status={SignupStatus}:Active={IsActive}:Ver={Version}";
+        }
+
+        public void SetProfile(object profile)
+        {
+            ProfileJson = JsonSerializer.Serialize(profile);
+            UpdatedAt = DateTimeOffset.UtcNow;
         }
     }
 }
