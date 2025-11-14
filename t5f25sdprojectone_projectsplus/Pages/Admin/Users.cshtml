@@ -1,0 +1,103 @@
+@page
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<div class="d-flex flex-column flex-lg-row gap-3">
+
+    <!-- Sidebar -->
+    <aside class="bg-white border rounded-4 p-3 p-lg-4" style="width: 260px; min-width: 220px;">
+        <div class="mb-4">
+            <div class="d-flex flex-column">
+                <span class="fw-bold">Projects+</span>
+                <span class="text-muted small">Administrator</span>
+            </div>
+        </div>
+
+        <nav class="nav nav-pills flex-column gap-1 small">
+            <a class="nav-link active" asp-page="/Admin/Users">
+                <span class="me-2">👥</span> Users
+            </a>
+            <a class="nav-link disabled">
+                <span class="me-2">📁</span> Projects
+            </a>
+            <a class="nav-link disabled">
+                <span class="me-2">🧑‍🏫</span> Assign Supervisors
+            </a>
+            <a class="nav-link disabled">
+                <span class="me-2">📢</span> Send Announcement
+            </a>
+            <a class="nav-link disabled">
+                <span class="me-2">✉️</span> Send Notification
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <section class="flex-grow-1">
+
+        <!-- Top bar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h1 class="h4 fw-semibold mb-1">User Management</h1>
+                <p class="text-muted small mb-0">
+                    Review user requests and manage roles.
+                </p>
+            </div>
+            <a asp-page="/Login" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                Logout
+            </a>
+        </div>
+
+        <!-- User Approval Queue -->
+        <div class="bg-white border rounded-4 p-3 p-lg-4 mb-4 shadow-sm">
+            <h2 class="h6 fw-semibold mb-3">User Approval Queue</h2>
+
+            <div class="alert alert-light border text-center py-4">
+                <div class="fw-semibold mb-1">No pending approvals</div>
+                <div class="text-muted small">New user applications will appear here.</div>
+            </div>
+        </div>
+
+        <!-- All Current Users -->
+        <div class="bg-white border rounded-4 p-3 p-lg-4 shadow-sm">
+            <h2 class="h6 fw-semibold mb-3">All Current Users</h2>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs small mb-3">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#students">Students</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#faculty">Faculty</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#mentors">Mentors</button></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- Students tab -->
+                <div class="tab-pane fade show active" id="students">
+                    <div class="alert alert-light border text-center py-4">
+                        <div class="fw-semibold mb-1">No students found</div>
+                        <div class="text-muted small">Student accounts will appear here.</div>
+                    </div>
+                </div>
+
+                <!-- Faculty tab -->
+                <div class="tab-pane fade" id="faculty">
+                    <div class="alert alert-light border text-center py-4">
+                        <div class="fw-semibold mb-1">No faculty found</div>
+                        <div class="text-muted small">Faculty accounts will appear here.</div>
+                    </div>
+                </div>
+
+                <!-- Mentors tab -->
+                <div class="tab-pane fade" id="mentors">
+                    <div class="alert alert-light border text-center py-4">
+                        <div class="fw-semibold mb-1">No mentors found</div>
+                        <div class="text-muted small">Mentor accounts will appear here.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+</div>
